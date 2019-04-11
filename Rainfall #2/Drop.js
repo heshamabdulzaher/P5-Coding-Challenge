@@ -11,19 +11,15 @@ class Drop {
   }
 
   dropHitTheGround(f) {
-    if (this.pos.y > height - 4) {
+    if (this.pos.y > height) {
       this.pos.y = random(-height, 0);
       this.vel.y = 0.2;
       this.pos.x = random(0, width);
       ellipse(this.pos.x, this.pos.y, 4);
     }
   }
-
-  applyForce(f) {
+  update(f) {
     this.acc.add(f);
-  }
-
-  update() {
     this.vel.add(this.acc);
     this.pos.add(this.vel);
     this.acc.mult(0);

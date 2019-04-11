@@ -17,8 +17,7 @@ function draw() {
   let gravity = createVector(0, 0.3);
   drops.forEach(drop => {
     drop.show();
-    drop.applyForce(gravity);
-    drop.update();
+    drop.update(gravity);
     drop.dropHitTheGround(gravity);
   });
 }
